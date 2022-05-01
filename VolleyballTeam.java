@@ -2,8 +2,8 @@ public class VolleyballTeam extends SportTeam{
 
     protected Rotation rotation;
 
-    public VolleyballTeam(String teamName, String nameInitials, int numberOfPlayers, Player[] players, Rotation rotation) {
-        super(teamName, nameInitials, numberOfPlayers, players);
+    public VolleyballTeam(String teamName, String nameInitials, int numberOfPlayers, Player[] players, Player[] activePlayers, Rotation rotation) {
+        super(teamName, nameInitials, numberOfPlayers, players, activePlayers);
         this.rotation = rotation;
     }
 

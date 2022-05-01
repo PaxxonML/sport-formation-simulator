@@ -1,4 +1,13 @@
 -- 30 April --
 - Started Project
 - Created Player, Sport, SportTeam and VolleyballTeam
-- Working on changing Player
+- Working on Player.playerChanging(Player)
+-- 1 May --
+- Finished 1st edition of Player, Sport, SportTeam
+- Finished *abstract* player changing schema
+- + Sport calls for a change on SportTeam and SportTeam does the same with Player
+- + Tried to create a simple schema open for adaptation to each sport still having utility within every sport
+- + This schema lacks taking into account the position of each Player to rule if a change is within the rules of each sport
+- + - Since the positions of each sport are defined in them, there's no possibility of abstraction using Java
+- + - + Since the enums are not programmed to able to inherit other enums
+- Created VolleyballPlayer * notFinished

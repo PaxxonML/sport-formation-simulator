@@ -15,8 +15,17 @@ public abstract class SportTeam {
         this.activePlayers = activePlayers;
     }
 
-    public boolean playerChange(){
+    public boolean playerChange(int p1_num, int p2_num){
+        int p1_index, p2_index;
+        p1_index = Player.indexOfInstanceInArray(players, p1_num);
+        p2_index = Player.indexOfInstanceInArray(players, p2_num);
 
+        if (p1_index == -1 || p2_index == -1) return false;
+
+        Player p1, p2;
+        p1 = players[p1_index];
+        p2 = players[p2_index];
+        return p1.playerChanging(p2);
     }
 
 

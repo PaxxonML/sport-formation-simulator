@@ -22,15 +22,21 @@ public abstract class Sport {
     }
     
     public boolean playerChange(int teamNum, int p1_num, int p2_num){
-        
+        if (!isPlayerChangeAllowedByNumOfChanges(teamNum)) return false;
+        if (!teams[teamNum].playerChange(p1_num,p2_num)) {
+            if (isCountingChanges) madeChanges[teamNum] -= 1;
+            return false;
+        }
+        return true;
     }
 
     public boolean playerChange(int p1_num, int p2_num){
         if (!isPlayerChangeAllowedByNumOfChanges(0)) return false;
-        if (teams[0].playerChange) return true;
-        else {
-            madeChanges[0] -= 1;
+        if (!teams[0].playerChange(p1_num,p2_num)) {
+            if (isCountingChanges) madeChanges[0] -= 1;
+            return false;
         }
+        return true;
     }
     
     public boolean isPlayerChangeAllowedByNumOfChanges(int teamNum){

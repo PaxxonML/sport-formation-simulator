@@ -13,11 +13,11 @@ public abstract class Player {
         this.isActive = true;
     }
 
-    public boolean playerChanging(Player player){
-        if (!this.isActive || !player.isActive) return false;
-        if (this.isPlaying == player.isPlaying) return this.isPlaying;
-        playerChangedFromBench();
-        player.playerChangedFromBench();
+    protected boolean playerChanging(Player otherPlayer){
+        if (!this.isActive || !otherPlayer.isActive) return false;
+        if (this.isPlaying == otherPlayer.isPlaying) return this.isPlaying;
+        this.playerChangedFromBench();
+        otherPlayer.playerChangedFromBench();
         return true;
     }
 
